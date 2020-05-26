@@ -1,0 +1,29 @@
+{
+    "name": "wildside/userstamps",
+    "description": "Eloquent trait to automatically maintain created_by and updated_by (and deleted_by when using SoftDeletes) on your models",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "eloquent",
+        "userstamps",
+        "created_by",
+        "updated_by",
+        "deleted_by"
+    ],
+    "authors": [
+        {
+            "name": "WildSide",
+            "email": "hello@wildside.uk",
+            "homepage": "https://wildside.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wildside\\Userstamps\\": "src"
+        }
+    }
+}

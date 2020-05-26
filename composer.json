@@ -1,0 +1,24 @@
+{
+    "name": "marciowinicius/laravel-default-classes",
+    "description": "Default classes for laravel project",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^6.2",
+        "intervention/image": "^2.5",
+        "wildside/userstamps": "0.5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "MarcioWinicius\\LaravelDefaultClasses\\": [
+                "src/Classes"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Márcio",
+            "email": "marciowinicius.mw@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
