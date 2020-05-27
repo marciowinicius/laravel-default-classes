@@ -10,6 +10,7 @@ use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
 
+use MarcioWinicius\LaravelDefaultClasses\Miscellaneous\FractalSerializer;
 use stdClass;
 
 trait Transformable
@@ -29,6 +30,7 @@ trait Transformable
         }
 
         $manager = new Manager();
+        $manager->setSerializer(new FractalSerializer());
 
         if (isset($_GET['include'])) {
             $manager->parseIncludes($_GET['include']);
