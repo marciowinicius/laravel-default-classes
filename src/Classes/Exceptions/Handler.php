@@ -70,7 +70,8 @@ class Handler extends ExceptionHandler
                 'error' => 1,
                 'exception' => get_class($exception),
                 'message' => 'Authentication error',
-                'data' => $exception->getMessageBag(),
+                'trace' => $exception->getMessageBag(),
+                'data' => null
             ], 401);
         }
 
@@ -79,7 +80,8 @@ class Handler extends ExceptionHandler
                 'error' => 1,
                 'exception' => get_class($exception),
                 'message' => 'Validation error',
-                'data' => $exception->getMessageBag(),
+                'trace' => $exception->getMessageBag(),
+                'data' => null
             ], 400);
         }
 
@@ -88,7 +90,8 @@ class Handler extends ExceptionHandler
                 'error' => 1,
                 'exception' => get_class($exception),
                 'message' => 'The resource you are trying to access was not found.',
-                'data' => $this->getTrace($exception)
+                'trace' => $this->getTrace($exception),
+                'data' => null
             ], 404);
 
         }
@@ -105,7 +108,8 @@ class Handler extends ExceptionHandler
             'error' => 1,
             'exception' => $exception->getStatusCode() . ' - ' . $exception->getClass(),
             'message' => 'Error - ' . $exception->getStatusCode() . ' - ' . $message,
-            'data' => $exception->getTrace($exception),
+            'trace' => $exception->getTrace($exception),
+            'data' => null
         ], 400);
     }
 
