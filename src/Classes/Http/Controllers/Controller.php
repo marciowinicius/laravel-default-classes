@@ -23,6 +23,10 @@ class Controller extends BaseController
 
     public function defaultReturn($error, $msg, $data)
     {
-        return ['error' => $error, 'message' => $msg, 'data' => $data];
+        $meta = null;
+        if (array_key_exists('meta', $data)){
+            $meta = $data['meta'];
+        }
+        return ['error' => $error, 'message' => $msg, 'data' => $data, 'meta' => $meta];
     }
 }
