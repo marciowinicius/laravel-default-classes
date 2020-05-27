@@ -4,6 +4,7 @@ namespace MarcioWinicius\LaravelDefaultClasses\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Auditable;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 use Artesaos\Defender\Traits\HasDefender;
@@ -17,7 +18,7 @@ use Wildside\Userstamps\Userstamps;
 
 class User extends Model implements Transformable, AuthenticatableContract, CanResetPasswordContract
 {
-    use Authenticatable, CanResetPassword, HasApiTokens, HasDefender, Notifiable, TransformableTrait, SoftDeletes, Userstamps;
+    use Authenticatable, CanResetPassword, HasApiTokens, HasDefender, Notifiable, TransformableTrait, SoftDeletes, Userstamps, Auditable;
 
     protected $fillable = [
         'nome',
