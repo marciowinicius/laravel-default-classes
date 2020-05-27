@@ -21,7 +21,7 @@ class User extends Model implements Transformable, AuthenticatableContract, CanR
     use Authenticatable, CanResetPassword, HasApiTokens, HasDefender, Notifiable, TransformableTrait, SoftDeletes, Userstamps, Auditable;
 
     protected $fillable = [
-        'nome',
+        'name',
         'email',
         'password'
     ];
