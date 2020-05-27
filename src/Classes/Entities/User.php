@@ -15,8 +15,9 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Wildside\Userstamps\Userstamps;
+use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 
-class User extends Model implements Transformable, AuthenticatableContract, CanResetPasswordContract
+class User extends Model implements Transformable, AuthenticatableContract, CanResetPasswordContract, AuditableContract
 {
     use Authenticatable, CanResetPassword, HasApiTokens, HasDefender, Notifiable, TransformableTrait, SoftDeletes, Userstamps, Auditable;
 
