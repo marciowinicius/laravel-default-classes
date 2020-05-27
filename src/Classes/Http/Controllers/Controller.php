@@ -2,6 +2,7 @@
 
 namespace MarcioWinicius\LaravelDefaultClasses\Http\Controllers;
 
+use MarcioWinicius\LaravelDefaultClasses\Traits\ApplySearchFilters;
 use MarcioWinicius\LaravelDefaultClasses\Traits\Transformable;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -18,7 +19,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
  */
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests, Transformable;
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests, Transformable, ApplySearchFilters;
 
     public function defaultReturn($error, $msg, $data)
     {
