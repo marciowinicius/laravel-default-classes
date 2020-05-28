@@ -21,7 +21,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests, Transformable, ApplySearchFilters;
 
-    public function defaultReturn($error, $msg, $data)
+    public function defaultReturn($msg, $data, $error = 0)
     {
         $meta = null;
         if (array_key_exists('meta', $data)){
