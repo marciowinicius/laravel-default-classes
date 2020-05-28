@@ -11,7 +11,7 @@ class UserTransformer extends TransformerAbstract
     {
         return [
             'id' => $user->id,
-            'nome' => $user->name,
+            'name' => $user->name,
             'email' => $user->email,
             'created_at' => $user->created_at->format('Y-m-d H:i:s'),
             'updated_at' => $user->updated_at->format('Y-m-d H:i:s'),
