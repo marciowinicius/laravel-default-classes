@@ -5,6 +5,7 @@ namespace MarcioWinicius\LaravelDefaultClasses\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Response;
+use Illuminate\Validation\UnauthorizedException;
 use Prettus\Validator\Exceptions\ValidatorException;
 use Symfony\Component\Debug\Exception\FlattenException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -74,6 +75,17 @@ class Handler extends ExceptionHandler
                 'data' => null,
                 'meta' => null,
             ], 401);
+        }
+
+        if ($exception instanceof UnauthorizedException) {
+            return response()->json([
+                'error' => 1,
+                'exception' => get_class($exception),
+                'message' => 'Not authorized',
+                'trace' => null,
+                'data' => null,
+                'meta' => null,
+            ], 400);
         }
 
         if ($exception instanceof ValidatorException) {
