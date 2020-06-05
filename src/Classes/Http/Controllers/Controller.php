@@ -26,6 +26,7 @@ class Controller extends BaseController
         $meta = null;
         if (array_key_exists('meta', $data)){
             $meta = $data['meta'];
+            unset($data['meta']);
         }
         return ['error' => $error, 'message' => $msg, 'data' => $data, 'meta' => $meta];
     }
